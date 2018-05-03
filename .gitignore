@@ -1,6 +1,7 @@
 .classpath
 .project
 .settings
+.idea
 info.txt
 target
 lib
