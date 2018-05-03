@@ -50,10 +50,19 @@ class CustomerDataMockImpl implements CustomerDataIntf {
 			Customer eric = DS.newCustomer( "Eric Winter" ).addContact( "eric@gmail.com" );
 			Customer anja = DS.newCustomer( "Anja Schuhmann");
 			DS.newCustomer( "Moritz Baumann" ).addContact( "moritz@gmx.de" );
-			DS.newCustomer( "Claudia Lindner" ).addContact( "beanie64@gmail.com" );
+			DS.newCustomer( "Claudia Lindner" ).addContact( "claudia@gmail.com" );
 			eric.addContact( "e532@yahoo.com" );
 			anja.addContact( "anja.schuhmann@benz.de" );
-		} else {
+
+			DS.newCustomer( "Alfons Kipp" ).addContact( "alfons284@gmail.com" );
+		}
+		if( name.equals( "Studenten" ) ){
+			DS.newCustomer( "Ka Yan Lam" ).addContact( "pink@yahoo.com" );
+			DS.newCustomer( "Nhu Mong Tran" ).addContact( "mango@gmail.com" );
+			DS.newCustomer( "Thao Nguyen" ).addContact( "hello@web.de" );
+		}
+
+		else {
 			// Customer list 2
 			DS.newCustomer( "Matteo Schwarz" ).addContact( "Grossweg 4/0, 79805 Aschaffenburg" );
 			DS.newCustomer( "Paul Neumann" ).addContact( "Engelbert-Noack-Gasse 3, 16665 Parsberg" );

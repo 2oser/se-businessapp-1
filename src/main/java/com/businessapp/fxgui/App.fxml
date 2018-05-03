@@ -5,16 +5,38 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.businessapp.fxgui.AppFXMLController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.businessapp.fxgui.AppFXMLController">
    <center>
-      <TabPane fx:id="fxApp_TabsPane" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+      <TabPane fx:id="fxApp_TabsPane" cache="true" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
-          <Tab id="Main" text="Main">
+          <Tab id="Main" style="-fx-background-color: #7da07f#7da07f;" text="Main">
             <content>
-              <AnchorPane>
+              <AnchorPane prefHeight="396.0" prefWidth="756.0" style="-fx-background-image: /Users/uni/Desktop/4. Semester/SE II/se-businessapp-1/src/images/header.png/Users/uni/Desktop/4. Semester/SE II/se-businessapp-1/src/images/header.png; -fx-background-color: #abc699;">
                      <children>
-                        <Button layoutX="25.0" layoutY="35.0" mnemonicParsing="false" onMouseReleased="#exitButton" prefHeight="25.0" prefWidth="76.0" text="Exit" />
+                        <Button layoutX="642.0" layoutY="355.0" mnemonicParsing="false" onMouseReleased="#exitButton" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: #7da07f#7da07f;" text="Exit">
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="#d1e4c4" />
+                                    <Stop color="WHITE" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill></Button>
+                        <Text fill="WHITE" layoutX="286.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="toy chóice!" textAlignment="CENTER">
+                           <font>
+                              <Font name="Verdana Bold Italic" size="46.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#5c724f" layoutX="224.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Text>
                      </children></AnchorPane>
             </content>
           </Tab>
