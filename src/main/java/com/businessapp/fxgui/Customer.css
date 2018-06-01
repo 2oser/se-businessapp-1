@@ -31,7 +31,6 @@
 	-fx-padding: 1 0 1 0;	/* top, right, bottom, left */
 }
 
-
 .tableview-customer-column-notes {
 	-fx-pref-width: 64px;
 	-fx-alignment: CENTER;
@@ -53,8 +52,27 @@
   -fx-padding: 0 0 0 0;
   -fx-pref-width: 50px;
 }
+
 .tableview-customer-column-notes-button:hover {
-	-fx-background-color: #ffd8bc;	/* color name: corn silk, #fff8dc-#002020 */
+	-fx-background-color: #eddcb1;
+	-fx-background-insets: 0;
+	-fx-padding: 0 0 0 0;
+	-fx-pref-width: 50px;
+}
+
+
+.tableview-article-column-notes-button {
+	-fx-background-color: #98aed1; 	/* color name: corn silk, #fff8dc-#000404 */
+	-fx-background-insets: 0;
+	-fx-padding: 0 0 0 0;
+	-fx-pref-width: 50px;
+}
+
+.tableview-article-column-notes-button:hover {
+	-fx-background-color: #bfd2ef;
+	-fx-background-insets: 0;
+	-fx-padding: 0 0 0 0;
+	-fx-pref-width: 50px;
 }
 
 

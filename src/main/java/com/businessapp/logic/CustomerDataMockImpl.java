@@ -62,7 +62,7 @@ class CustomerDataMockImpl implements CustomerDataIntf {
 			DS.newCustomer( "Thao Nguyen" ).addContact( "hello@web.de" );
 		}
 
-		else {
+		if( name.equals( "Kundenliste_2" ) ){
 			// Customer list 2
 			DS.newCustomer( "Matteo Schwarz" ).addContact( "Grossweg 4/0, 79805 Aschaffenburg" );
 			DS.newCustomer( "Paul Neumann" ).addContact( "Engelbert-Noack-Gasse 3, 16665 Parsberg" );

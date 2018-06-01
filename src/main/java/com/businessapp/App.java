@@ -5,6 +5,7 @@ import java.util.Arrays;
 
 import com.businessapp.fxgui.AppGUIBuilder;
 import com.businessapp.logic.CalculatorLogicIntf;
+import com.businessapp.logic.CatalogDataIntf;
 import com.businessapp.logic.CustomerDataIntf;
 
 import javafx.application.Application;
@@ -38,7 +39,7 @@ public class App extends Application {
 			new Component(	"Kunden",		"Customer.fxml",		CustomerDataIntf.getController() ),
 			new Component(	"Kundenliste_2","Customer.fxml",		CustomerDataIntf.getController() ),
 			new Component(	"Studenten","Customer.fxml",		CustomerDataIntf.getController() ),
-			//new Component( "Katalog",		"Catalog.fxml",			CatalogDataIntf.getController() ),
+			new Component( "Katalog",		"Catalog.fxml",			CatalogDataIntf.getController() ),
 	}));
 
 	public static App getInstance() {
