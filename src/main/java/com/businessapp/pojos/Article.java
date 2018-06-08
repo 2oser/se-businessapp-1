@@ -45,7 +45,7 @@ import com.businessapp.logic.IDGen;
          * @param id if customer id is null, an id is generated for the new customer object.
          * @param name customer.
          */
-        public Article( String id, String name ) {
+        public Article(String id, String name ) {
             this.id = id==null? IDG.nextId() : id;
             this.name = name;
             this.notes.add( new LogEntry( "Article was added." ) );

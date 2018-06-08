@@ -110,17 +110,10 @@ public class CustomerDataSource implements CustomerDataIntf {
 
     @Override
     public void deleteCustomers(Collection<String> ids) {
-        String showids = "";
-        for( String id : ids ) {
-            _data.remove( id );
-            showids += ( showids.length()==0? "" : ", " ) + id;
-        }
-        if( ids.size() > 0 ) {
-            //save( "deleted: " + idx, customers );
-            if( persistenceProvider != null ) {
-                persistenceProvider.save( customers, customers.getId() );
-            }
-            System.err.println( "deleted: " + showids );
+        customers.delete(ids);
+        //save( "deleted: " + idx, customers );
+        if( persistenceProvider != null ) {
+            persistenceProvider.save( customers, customers.getId() );
         }
     }
 }

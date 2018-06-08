@@ -63,9 +63,9 @@ public class JSONMapper {
 			//System.out.println( " [map Customer -> CustomerJSON: " + e.getId() + "] " );
 			e = new CustomerJSON( (Customer)e );
 
-		}// else if( e instanceof CatalogItem ) {
-			//e = new CatalogItemJSON( (CatalogItem)e );
-		//}
+		} else if( e instanceof Article ) {
+			e = new ArticleJSON( (Article) e );
+		}
 		return e;
 	}
 
@@ -76,9 +76,9 @@ public class JSONMapper {
 			//System.err.println( " [map CustomerJSON -> Customer: " + djo.getId() + "] " );
 			e = ((CustomerJSON)djo).getCustomer();
 
-		}// else if( djo instanceof CatalogItemJSON ) {
-			//e = ((CatalogItemJSON)djo).getCatalogItem();
-		//}
+		} else if( djo instanceof ArticleJSON ) {
+			e = ((ArticleJSON)djo).getArticle();
+		}
 		return e;
 	}
 

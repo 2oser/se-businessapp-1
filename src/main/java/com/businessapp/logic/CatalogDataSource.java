@@ -114,18 +114,10 @@ public class CatalogDataSource implements CatalogDataIntf {
 
     @Override
     public void deleteArticle(Collection<String> ids) {
-        String showids = "";
-        for( String id : ids ) {
-            _data.remove( id );
-            showids += ( showids.length()==0? "" : ", " ) + id;
-        }
-        if( ids.size() > 0 ) {
+            articles.delete(ids);
             //save( "deleted: " + idx, customers );
             if( persistenceProvider != null ) {
                 persistenceProvider.save( articles, articles.getId() );
             }
-
-            System.err.println( "deleted: " + showids );
-        }
     }
 }
