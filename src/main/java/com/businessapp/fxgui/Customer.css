@@ -22,7 +22,6 @@
 	-fx-font-weight: bold;
 }
 
-
 .tableview-customer-column-status {
 	-fx-pref-width: 48px;
 }
@@ -62,7 +61,7 @@
 
 
 .tableview-article-column-notes-button {
-	-fx-background-color: #98aed1; 	/* color name: corn silk, #fff8dc-#000404 */
+	-fx-background-color: #98aed1;
 	-fx-background-insets: 0;
 	-fx-padding: 0 0 0 0;
 	-fx-pref-width: 50px;

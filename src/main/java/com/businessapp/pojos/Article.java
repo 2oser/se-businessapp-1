@@ -31,7 +31,7 @@ import com.businessapp.logic.IDGen;
 
         private List<LogEntry> notes = new ArrayList<LogEntry>();
 
-        private com.businessapp.pojos.Article.ArticleStatus status = com.businessapp.pojos.Article.ArticleStatus.AVAILABLE;
+        private ArticleStatus status = ArticleStatus.AVAILABLE;
 
 
         /**
@@ -79,21 +79,21 @@ import com.businessapp.logic.IDGen;
             return notes;
         }
 
-        public com.businessapp.pojos.Article.ArticleStatus getStatus() {
+        public ArticleStatus getStatus() {
             return status;
         }
 
-        public com.businessapp.pojos.Article setName(String name ) {
+        public Article setName(String name ) {
             this.name = name;
             return this;
         }
 
-        public com.businessapp.pojos.Article addCategory(String category ) {
+        public Article addCategory(String category ) {
             categories.add(category );
             return this;
         }
 
-        public com.businessapp.pojos.Article setStatus(com.businessapp.pojos.Article.ArticleStatus status ) {
+        public Article setStatus(ArticleStatus status ) {
             this.status = status;
             return this;
         }

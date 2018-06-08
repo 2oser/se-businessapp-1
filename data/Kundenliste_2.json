@@ -1,0 +1,29 @@
+{
+  "id" : "Kundenliste_2",
+  "genericType" : "com.businessapp.pojos.Customer",
+  "entities" : [ {
+    "id" : "C.J7H3D6",
+    "name" : "Mia Miami",
+    "contacts" : [ "Miami Avenue, 911, Miami" ],
+    "notes" : [ "2018-06-07 23:32:48.006, Customer record created." ],
+    "status" : "ACTIVE"
+  }, {
+    "id" : "C.C2GHHU",
+    "name" : "Otto Otter",
+    "contacts" : [ "Otter Str. 8, 1234, Otterhausen" ],
+    "notes" : [ "2018-06-07 23:31:22.882, Customer record created." ],
+    "status" : "ACTIVE"
+  }, {
+    "id" : "C.EQ2EHS",
+    "name" : "Anna Anaconda",
+    "contacts" : [ "Anaconda Path, 4567, Amazonas" ],
+    "notes" : [ "2018-06-07 23:32:20.744, Customer record created." ],
+    "status" : "ACTIVE"
+  }, {
+    "id" : "C.WN725Q",
+    "name" : "Brad Bread",
+    "contacts" : [ "Breadloaf Way, 999, Bread Ville" ],
+    "notes" : [ "2018-06-07 23:31:44.575, Customer record created." ],
+    "status" : "ACTIVE"
+  } ]
+}

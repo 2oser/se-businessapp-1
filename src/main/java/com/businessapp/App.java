@@ -4,17 +4,17 @@ import java.io.IOException;
 import java.util.Arrays;
 
 import com.businessapp.fxgui.AppGUIBuilder;
-import com.businessapp.logic.CalculatorLogicIntf;
-import com.businessapp.logic.CatalogDataIntf;
-import com.businessapp.logic.CustomerDataIntf;
+import com.businessapp.logic.*;
 
+import com.businessapp.persistence.PersistenceProviderFactory;
+import com.businessapp.persistence.PersistenceProviderIntf;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
 
 /**
  * Main class launched by JavaFX runtime.
- * 
+ *
  * The UI uses a TabPanel to frame a variable number of components as Tab's.
  * Each component has a name, a UI/FXML Controller handling the user interface
  * interactions and a separate controller that implements logic independently
@@ -27,6 +27,9 @@ public class App extends Application {
 	public static final String FXML_PATH	= "fxgui/";
 	private static App _app = null;
 
+	//private PersistenceProviderIntf persistenceProvider = PersistenceProviderFactory.getPersistenceProvider( "JavaSerialization" );
+	private PersistenceProviderIntf persistenceProvider = PersistenceProviderFactory.getPersistenceProvider( "json" );
+
 	/*
 	 * List of App components in order of appearance on the main GUI/TabPanel.
 	 */
@@ -35,11 +38,10 @@ public class App extends Application {
 			//				Name,			FXML UI-Controller,		Logic-Controller
 			new Component(	"Main",			"App.fxml",				null ),
 			new Component(	"Calculator",	"Calculator.fxml",		CalculatorLogicIntf.getController() ),
-			//new Component( "Calc_2",		"Calculator.fxml",		CalculatorLogicIntf.getController() ),
-			new Component(	"Kunden",		"Customer.fxml",		CustomerDataIntf.getController() ),
-			new Component(	"Kundenliste_2","Customer.fxml",		CustomerDataIntf.getController() ),
+			new Component(	"Kunden",		"Customer.fxml", CustomerDataSource.getController( "Kunden", persistenceProvider ) ),
+			new Component(	"Kundenliste_2","Customer.fxml", CustomerDataSource.getController( "Kundenliste_2", persistenceProvider ) ),
 			new Component(	"Studenten","Customer.fxml",		CustomerDataIntf.getController() ),
-			new Component( "Katalog",		"Catalog.fxml",			CatalogDataIntf.getController() ),
+			new Component( "Katalog",		"Catalog.fxml", CatalogDataSource.getController( "Katalog", persistenceProvider ) ),
 	}));
 
 	public static App getInstance() {

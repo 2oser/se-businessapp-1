@@ -22,7 +22,7 @@ import com.businessapp.pojos.Article;
          * Constructor.
          */
         CatalogDataMockImpl() {
-            this._data = new HashMap<String, Article>();
+            this._data = new HashMap<>();
             this.DS = this;
         }
 
@@ -46,7 +46,7 @@ import com.businessapp.pojos.Article;
 
             String name = parent.getName();
             if (name.equals("Katalog")) {
-                DS.newArticle("Trixie Hunde").addCategory("Kauspielzeug");
+                DS.newArticle("Trixie Hunde Kauball").addCategory("Kauspielzeug");
                 DS.newArticle("Kong Wobbler").addCategory("Kauspielzeug");
                 DS.newArticle("Kong Goodie Bone").addCategory("Kauspielzeug");
                 DS.newArticle("Chuckit. Ultra Ball").addCategory("Hundebälle");
@@ -112,6 +112,7 @@ import com.businessapp.pojos.Article;
             }
             if( ids.size() > 0 ) {
                 //save( "deleted: " + idx, customers );
+
                 System.err.println( "deleted: " + showids );
             }
         }

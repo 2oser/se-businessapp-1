@@ -17,7 +17,7 @@ public class PersistenceProviderFactory {
 	 * Return persistence provider instance.
 	 * @param selector to specify type of persistence provider.
 	 * 		- match "(.*)seri(.*)" - JavaSerializationPersistenceProvider
-	 * 		- match "(.*)json(.*)" - JSONPersistenceProvider
+	 * 		- match "(.*)dto(.*)" - JSONPersistenceProvider
 	 * 		- match "(.*)jdbc(.*)" - JDBCPersistenceProvider
 	 * @return persistence provider instance.
 	 */
@@ -29,7 +29,7 @@ public class PersistenceProviderFactory {
 
 			} else {
 				if( selector.toLowerCase().matches( "(.*)json(.*)" ) ) {
-// JSON					_provider = JSONPersistenceProvider.getProvider();
+ 				_provider = JSONPersistenceProvider.getProvider();
 
 				} else {
 					if( selector.toLowerCase().matches( "(.*)jdbc(.*)" ) ) {

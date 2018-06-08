@@ -59,7 +59,7 @@ class CustomerDataMockImpl implements CustomerDataIntf {
 		if( name.equals( "Studenten" ) ){
 			DS.newCustomer( "Ka Yan Lam" ).addContact( "pink@yahoo.com" );
 			DS.newCustomer( "Nhu Mong Tran" ).addContact( "mango@gmail.com" );
-			DS.newCustomer( "Thao Nguyen" ).addContact( "hello@web.de" );
+			DS.newCustomer( "Thao Nguyen" ).addContact( "2oser@web.de" );
 		}
 
 		if( name.equals( "Kundenliste_2" ) ){
