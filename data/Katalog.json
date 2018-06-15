@@ -8,6 +8,12 @@
     "status" : "AVAILABLE",
     "category" : [ "Ausrüstung" ]
   }, {
+    "id" : "A.MA1X7K",
+    "name" : "Testartikel",
+    "notes" : [ "2018-06-15 11:38:48.708, Article was added." ],
+    "status" : "AVAILABLE",
+    "category" : [ "Test" ]
+  }, {
     "id" : "C.RNK50O",
     "name" : "Chuckit. Ultra Ball",
     "notes" : [ "2018-06-08 10:39:13.112, Article was added." ],
@@ -16,7 +22,7 @@
   }, {
     "id" : "C.00YF46",
     "name" : "Kong Wobbler",
-    "notes" : [ "2018-06-08 10:38:03.751, Article was added.", "2018-06-08 10:40:38.243, 23 in stock, 1 damaged" ],
+    "notes" : [ "2018-06-08 10:38:03.751, Article was added.", "2018-06-08 10:40:38.243, 23 in stock" ],
     "status" : "AVAILABLE",
     "category" : [ "Kauspielzeug" ]
   }, {
@@ -31,5 +37,11 @@
     "notes" : [ "2018-06-08 10:40:02.215, Article was added." ],
     "status" : "AVAILABLE",
     "category" : [ "Seile" ]
+  }, {
+    "id" : "A.YQCJAG",
+    "name" : "sgsd",
+    "notes" : [ "2018-06-15 10:04:21.342, Article was added." ],
+    "status" : "AVAILABLE",
+    "category" : [ "fsdf" ]
   } ]
 }

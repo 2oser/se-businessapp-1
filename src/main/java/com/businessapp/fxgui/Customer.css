@@ -30,6 +30,21 @@
 	-fx-padding: 1 0 1 0;	/* top, right, bottom, left */
 }
 
+.tableview-customer-column-start {
+	-fx-pref-width: 48px;
+}
+.tableview-customer-column-start.table-cell {
+	-fx-alignment: CENTER;
+	-fx-padding: 1 0 1 0;	/* top, right, bottom, left */
+}
+.tableview-customer-column-end{
+	 -fx-pref-width: 48px;
+ }
+.tableview-customer-column-end.table-cell {
+	-fx-alignment: CENTER;
+	-fx-padding: 1 0 1 0;	/* top, right, bottom, left */
+}
+
 .tableview-customer-column-notes {
 	-fx-pref-width: 64px;
 	-fx-alignment: CENTER;

@@ -53,13 +53,26 @@ public class CatalogDataSource implements CatalogDataIntf {
                 persistenceProvider.loadInto(articles.getId(), entity -> {
                         this.articles.store( (Article)entity);
                 return true;
-});
+                });
             } catch( IOException e ) {
                 System.out.print( ", " );
                 System.err.print( "No data: " + articles.getId() );
+
+                /*‐‐‐ BEGIN ‐‐‐ */
+                CatalogDataIntf mockDS = new CatalogDataMockImpl();
+                //TODO: make Component constructor public.
+                Component parent = new Component( articles.getId(), null, null );
+                mockDS.inject( parent );
+                mockDS.start();
+                for( Article mockArticle : mockDS.findAllArticles() ) {
+                    articles.update( mockArticle );
+                }
+                persistenceProvider.save( articles, articles.getId() );
+                /*‐‐‐ END ‐‐‐ */
+            }
             }
         }
-    }
+
 
 
     @Override

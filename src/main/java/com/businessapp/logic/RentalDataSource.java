@@ -4,31 +4,31 @@ import com.businessapp.Component;
 import com.businessapp.ControllerIntf;
 import com.businessapp.persistence.GenericEntityContainer;
 import com.businessapp.persistence.PersistenceProviderIntf;
-import com.businessapp.pojos.Customer;
+import com.businessapp.pojos.Reservation;
 
 import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
 
-public class CustomerDataSource implements CustomerDataIntf {
-    private final GenericEntityContainer<Customer> customers;
+public class RentalDataSource implements RentalDataIntf {
+    private final GenericEntityContainer<Reservation> reservations;
     private PersistenceProviderIntf persistenceProvider = null;
-    private final HashMap<String,Customer> _data = new HashMap<>();
+    private final HashMap<String,Reservation> _data = new HashMap<>();
 
     /**
      * Factory method that returns a CatalogItem data source.
      * @return new instance of data source.
      */
-    public static CustomerDataIntf getController( String name, PersistenceProviderIntf persistenceProvider ) {
-        CustomerDataIntf cds = new CustomerDataSource( name );
+    public static RentalDataIntf getController( String name, PersistenceProviderIntf persistenceProvider ) {
+        RentalDataIntf cds = new RentalDataSource( name );
         cds.inject( persistenceProvider );
         return cds;
     }
     /**
      * Private constructor.
      */
-    private CustomerDataSource( String name ) {
-        this.customers = new GenericEntityContainer<>(name, Customer.class);
+    private RentalDataSource( String name ) {
+        this.reservations = new GenericEntityContainer<>(name, Reservation.class);
     }
     @Override
     public void inject( ControllerIntf dep ) {
@@ -49,25 +49,25 @@ public class CustomerDataSource implements CustomerDataIntf {
                 /*
                  * Attempt to load container from persistent storage.
                  */
-                persistenceProvider.loadInto( customers.getId(), entity -> {
-                        this.customers.store( (Customer)entity );
-                return true;
-});
+                persistenceProvider.loadInto( reservations.getId(), entity -> {
+                    this.reservations.store( (Reservation) entity );
+                    return true;
+                });
             } catch( IOException e ) {
                 System.out.print( ", " );
-                System.err.print( "No data: " + customers.getId() );
+                System.err.print( "No data: " + reservations.getId() );
 
-                /*‐‐‐ BEGIN ‐‐‐ */
-                CustomerDataIntf mockDS = new CustomerDataMockImpl();
+               /*‐‐‐ BEGIN ‐‐‐ */
+                RentalDataIntf mockDS = new RentalDataMockImpl();
                 //TODO: make Component constructor public.
-                Component parent = new Component( customers.getId(), null, null );
+                Component parent = new Component( reservations.getId(), null, null );
                 mockDS.inject( parent );
                 mockDS.start();
-                for( Customer mockCustomer : mockDS.findAllCustomers() ) {
-                    customers.update( mockCustomer );
+                for( Reservation mockReservation : mockDS.findAllReservations() ) {
+                    reservations.update( mockReservation );
                 }
-                persistenceProvider.save( customers, customers.getId() );
-                /*‐‐‐ END ‐‐‐ */
+                persistenceProvider.save( reservations, reservations.getId() );
+                //*‐‐‐ END ‐‐‐ */
             }
         }
     }
@@ -78,32 +78,32 @@ public class CustomerDataSource implements CustomerDataIntf {
     }
 
     @Override
-    public Customer findCustomerById(String id) {
+    public Reservation findReservationById(String id) {
         return null;
     }
 
     @Override
-    public Collection<Customer> findAllCustomers() {
-        return customers.findAll();
+    public Collection<Reservation> findAllReservations() {
+        return reservations.findAll();
     }
 
     @Override
-    public Customer newCustomer(String name) {
-        Customer c = new Customer( null, name );
-        customers.update( c );
+    public Reservation newReservation(String a_id, String c_id, String start, String end) {
+        Reservation c = new Reservation( null, a_id, c_id, start, end );
+        reservations.update( c );
 
         if( persistenceProvider != null ) {
-            persistenceProvider.save( customers, customers.getId() );
+            persistenceProvider.save( reservations, reservations.getId() );
         }
 
         return c;
     }
 
     @Override
-    public void updateCustomer(Customer c) {
+    public void updateReservation(Reservation c) {
         String msg = "updated: ";
         if( c != null ) {
-            Customer c2 = _data.get( c.getId() );
+            Reservation c2 = _data.get( c.getId() );
             if( c != c2 ) {
                 if( c2 != null ) {
                     _data.remove( c2.getId() );
@@ -113,7 +113,7 @@ public class CustomerDataSource implements CustomerDataIntf {
             }
 
             if( persistenceProvider != null ) {
-                persistenceProvider.save( customers, customers.getId() );
+                persistenceProvider.save( reservations, reservations.getId() );
             }
             //save( msg, c );
             System.err.println( msg + c.getId() );
@@ -121,11 +121,11 @@ public class CustomerDataSource implements CustomerDataIntf {
     }
 
     @Override
-    public void deleteCustomers(Collection<String> ids) {
-        customers.delete(ids);
+    public void deleteReservation(Collection<String> ids) {
+        reservations.delete(ids);
         //save( "deleted: " + idx, customers );
         if( persistenceProvider != null ) {
-            persistenceProvider.save( customers, customers.getId() );
+            persistenceProvider.save( reservations, reservations.getId() );
         }
     }
 }

@@ -5,6 +5,7 @@ import java.util.HashMap;
 import com.businessapp.pojos.Article;
 import com.businessapp.pojos.Customer;
 import com.businessapp.pojos.EntityIntf;
+import com.businessapp.pojos.Reservation;
 
 
 /**
@@ -27,6 +28,7 @@ public class JSONMapper {
 		classMapper.put( Customer.class, CustomerJSON.class );
 
 		classMapper.put( Article.class, ArticleJSON.class );
+		classMapper.put(Reservation.class, ReservationJSON.class);
 	}
 
 	/**
@@ -65,6 +67,8 @@ public class JSONMapper {
 
 		} else if( e instanceof Article ) {
 			e = new ArticleJSON( (Article) e );
+		}  if( e instanceof Reservation){
+			e = new ReservationJSON( (Reservation) e );
 		}
 		return e;
 	}
@@ -78,6 +82,8 @@ public class JSONMapper {
 
 		} else if( djo instanceof ArticleJSON ) {
 			e = ((ArticleJSON)djo).getArticle();
+		}  if( djo instanceof ReservationJSON ) {
+			e = ((ReservationJSON)djo).getReservation();
 		}
 		return e;
 	}

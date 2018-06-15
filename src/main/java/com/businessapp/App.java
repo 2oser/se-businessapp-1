@@ -8,6 +8,7 @@ import com.businessapp.logic.*;
 
 import com.businessapp.persistence.PersistenceProviderFactory;
 import com.businessapp.persistence.PersistenceProviderIntf;
+import com.businessapp.pojos.Reservation;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -42,6 +43,7 @@ public class App extends Application {
 			new Component(	"Kundenliste_2","Customer.fxml", CustomerDataSource.getController( "Kundenliste_2", persistenceProvider ) ),
 			new Component(	"Studenten","Customer.fxml",		CustomerDataIntf.getController() ),
 			new Component( "Katalog",		"Catalog.fxml", CatalogDataSource.getController( "Katalog", persistenceProvider ) ),
+			new Component( "Reservation",		"Reservation.fxml", RentalDataSource.getController( "Reservation", persistenceProvider ) ),
 	}));
 
 	public static App getInstance() {

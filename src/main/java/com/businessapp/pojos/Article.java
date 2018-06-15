@@ -14,7 +14,7 @@ import com.businessapp.logic.IDGen;
     public class Article implements EntityIntf  {
         private static final long serialVersionUID = 1L;
 
-        private static IDGen IDG = new IDGen( "C.", IDGen.IDTYPE.AIRLINE, 6 );
+        private static IDGen IDG = new IDGen( "A.", IDGen.IDTYPE.AIRLINE, 6 );
 
         // Article states.
         public enum ArticleStatus { AVAILABLE, DAMAGED, LOST, NOT_AVAILABLE };

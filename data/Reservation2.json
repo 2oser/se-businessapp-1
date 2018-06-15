@@ -1,0 +1,23 @@
+{
+  "id" : "Reservation",
+  "genericType" : "com.businessapp.pojos.Reservation",
+  "entities" : [ {
+    "status" : "PENDING",
+    "r_id" : "R.S1AUOC",
+    "a_id" : "C.987654: Otter",
+    "c_id" : "A.123456: Trixie Hunde Kauball",
+    "startDate" : "12.06.18",
+    "endDate" : "",
+    "notes" : [ "2018-06-15 10:04:37.180, Article was added." ],
+    "id" : "R.S1AUOC"
+  }, {
+    "status" : "PENDING",
+    "r_id" : "R.FRKQNF",
+    "a_id" : "laks,",
+    "c_id" : "lackns,",
+    "startDate" : "",
+    "endDate" : "",
+    "notes" : [ "2018-06-15 10:06:14.836, Article was added." ],
+    "id" : "R.FRKQNF"
+  } ]
+}
